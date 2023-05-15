@@ -1,0 +1,4 @@
+curl -X POST http://127.0.0.1:8000/register -d '{"name": "john", "email":"hello@gmail.com", "surname": "bogart", "password": "super-safe", "enable_2fa": false}'
+
+
+curl http://127.0.0.1:8000/login -d '{"email":"hello@gmail.com", "password": "super-safe"}'
