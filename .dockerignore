@@ -1,0 +1,9 @@
+*.pyc
+.DS_Store
+/.vscode/
+dump.rdb
+/.venv/
+/venv/
+/.mypy_cache/
+/.idea/
+/.run/

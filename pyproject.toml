@@ -1,0 +1,72 @@
+[tool.poetry]
+name = "custom-login-api"
+version = "0.1.0"
+description = ""
+authors = ["alexander3605 <alessandro.serena3605@gmail.com>"]
+readme = "README.md"
+packages = [{include = "custom_login_api"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+environ-config = "^23.2.0"
+fastapi = "^0.95.2"
+pydantic = {version = "^1.10.7", extras = ["email"]}
+pyjwt = "^2.7.0"
+uvicorn = {version = "^0.22.0", extras = ["standard"]}
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+flake8 = "^6.0.0"
+isort = "^5.12.0"
+mypy = "^1.2.0"
+pylint = "^2.17.4"
+pytest = "^7.3.1"
+pytest-cov = "^4.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+exclude = '''
+(
+    \.eggs |
+    \.git |
+    \.githooks |
+    \.idea |
+    \.mypy_cache |
+    \.?venv |
+    \.vscode |
+    build |
+    dist |
+    node_modules
+)
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+ignore_missing_imports = true
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+disallow_subclassing_any = false
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+implicit_reexport = true
+no_implicit_optional = true
+strict_equality = true
+strict_optional = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unused_configs = true
+warn_unused_ignores = true
+warn_unreachable = true

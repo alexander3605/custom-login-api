@@ -1,0 +1,1 @@
+sudo docker run --rm -it  -p 8000:8000/tcp ghcr.io/alexander3605/custom-login-api:main
