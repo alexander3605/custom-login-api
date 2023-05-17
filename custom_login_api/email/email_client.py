@@ -18,4 +18,3 @@ class EmailClient(ABC):
         :param recipient_email: the email address of the recipient.
         :param content: the email content.
         """
-        pass

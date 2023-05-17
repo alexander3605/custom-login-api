@@ -25,12 +25,18 @@ class UserRegistrationData(BaseModel):
     """Whether the user wishes to enable 2FA for logging in into the platform."""
 
     def __init__(self, **data: Any) -> None:
-        """Constructor which performs a validation check on the email address provided."""
+        """Constructor which performs validation checks on the values provided."""
         try:
             validate_email(data.get("email", ""))
         except EmailError as e:
             raise ValidationError(errors=[], model=UserRegistrationData) from e
+        if not data.get("password", "") or not data.get("name", "") or not data.get("surname", ""):
+            raise ValidationError(errors=[], model=UserRegistrationData)
+
         super().__init__(**data)
+
+        # if not self.password or not self.name or not self.surname:
+        #     raise ValidationError(errors=[], model=UserRegistrationData) from ValueError()
 
     @classmethod
     def mock(cls) -> UserRegistrationData:
