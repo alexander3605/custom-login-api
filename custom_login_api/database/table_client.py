@@ -11,4 +11,3 @@ class TableClient(ABC):
         """
         Create the database table managed by the client, if it does not exist already.
         """
-        pass

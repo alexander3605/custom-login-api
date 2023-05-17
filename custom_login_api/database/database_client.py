@@ -19,4 +19,3 @@ class DatabaseClient(ABC):
         :param parameters: optional parameters to be inserted in the SQL command.
         :return: the result of the operation.
         """
-        pass
