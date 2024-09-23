@@ -17,7 +17,7 @@ uvicorn = {version = "^0.22.0", extras = ["standard"]}
 
 
 [tool.poetry.group.dev.dependencies]
-black = "^23.3.0"
+black = "^24.3.0"
 flake8 = "^6.0.0"
 httpx = "^0.24.0"
 isort = "^5.12.0"
