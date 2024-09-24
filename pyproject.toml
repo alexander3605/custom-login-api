@@ -11,7 +11,7 @@ python = "^3.10"
 
 environ-config = "^24.1.0"
 fastapi = "^0.115.0"
-pydantic = {version = "^1.10.13", extras = ["email"]}
+pydantic = {version = "^2.9.2", extras = ["email"]}
 pyjwt = "^2.7.0"
 uvicorn = {version = "^0.22.0", extras = ["standard"]}
 
