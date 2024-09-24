@@ -27,23 +27,23 @@ jobs:
         pip install poetry
         poetry install --with dev
 
-      #----------------------------------------------
-      # Run MyPY check
-      #----------------------------------------------
-      - name: mypy check
-        run: poetry run mypy .
-      #----------------------------------------------
-      # Run Flake8 check
-      #----------------------------------------------
-      - name: Flake8 Lint
-        run: poetry run flake8 .
-      #----------------------------------------------
-      # Run Python Black check
-      #----------------------------------------------
-      - name: Black style check
-        run: poetry run black .
-      #----------------------------------------------
-      # Run isort check
-      #----------------------------------------------
-      - name: Imports order check (isort)
-        run: poetry run isort .
+    #----------------------------------------------
+    # Run MyPY check
+    #----------------------------------------------
+    - name: mypy check
+      run: poetry run mypy .
+    #----------------------------------------------
+    # Run Flake8 check
+    #----------------------------------------------
+    - name: Flake8 Lint
+      run: poetry run flake8 .
+    #----------------------------------------------
+    # Run Python Black check
+    #----------------------------------------------
+    - name: Black style check
+      run: poetry run black .
+    #----------------------------------------------
+    # Run isort check
+    #----------------------------------------------
+    - name: Imports order check (isort)
+      run: poetry run isort .
