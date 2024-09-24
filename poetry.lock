@@ -281,13 +281,13 @@ idna = ">=2.0.0"
 
 [[package]]
 name = "environ-config"
-version = "23.2.0"
+version = "24.1.0"
 description = "Boilerplate-free configuration with env variables."
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 files = [
-    {file = "environ_config-23.2.0-py3-none-any.whl", hash = "sha256:20a60f90a0a9e80d7d5ed92060a8fbb9b7b016ba34bda85361ec376340013be9"},
-    {file = "environ_config-23.2.0.tar.gz", hash = "sha256:e83fa15efbd7ab7130268c33992d9d42747232315d05586e5276c96ee89020f9"},
+    {file = "environ_config-24.1.0-py3-none-any.whl", hash = "sha256:f63c03ac6533cbf0836de988fb40dd330278bf6424734218f807d509ee835737"},
+    {file = "environ_config-24.1.0.tar.gz", hash = "sha256:473a25809b2199bcd2aab0d70c9ed9289d3ff4dfca16eec518a74c65f2a9f021"},
 ]
 
 [package.dependencies]
@@ -295,9 +295,10 @@ attrs = ">=17.4.0"
 
 [package.extras]
 aws = ["boto3"]
-dev = ["environ-config[docs,tests]"]
-docs = ["environ-config[aws]", "furo", "myst-parser", "sphinx", "sphinx-notfound-page"]
-tests = ["coverage[toml]", "moto", "pytest"]
+cov = ["coverage[toml] (>=7.2.0)", "moto", "pytest"]
+dev = ["moto", "nox", "pre-commit", "pytest"]
+docs = ["boto3", "furo", "myst-parser", "sphinx", "sphinx-notfound-page"]
+tests = ["moto", "pytest"]
 
 [[package]]
 name = "exceptiongroup"
@@ -1304,4 +1305,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "71a4c194545395f6dd1b135b99c95ee6dec3740d40d34c0f35fcefbc3b68c8bf"
+content-hash = "e12bf313e7f947aca876a04694229f509030205d82215e340931496d447c5dc6"
