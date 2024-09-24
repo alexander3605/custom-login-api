@@ -49,4 +49,4 @@ class AuthenticationClient:
             algorithms=["HS256"],
             options={"require": ["exp"]},
         )
-        return TokenPayload.parse_obj(token_payload_dict)
+        return TokenPayload.model_validate(token_payload_dict)

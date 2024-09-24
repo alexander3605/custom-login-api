@@ -3,9 +3,8 @@ from __future__ import annotations
 from typing import Any
 
 from pydantic import BaseModel
-from pydantic.error_wrappers import ValidationError
-from pydantic.errors import EmailError
 from pydantic.networks import validate_email
+from pydantic_core._pydantic_core import PydanticCustomError
 
 
 class UserRegistrationData(BaseModel):
@@ -26,12 +25,9 @@ class UserRegistrationData(BaseModel):
 
     def __init__(self, **data: Any) -> None:
         """Constructor which performs validation checks on the values provided."""
-        try:
-            validate_email(data.get("email", ""))
-        except EmailError as e:
-            raise ValidationError(errors=[], model=UserRegistrationData) from e
+        validate_email(data.get("email", ""))
         if not data.get("password", "") or not data.get("name", "") or not data.get("surname", ""):
-            raise ValidationError(errors=[], model=UserRegistrationData)
+            raise PydanticCustomError("", "")
 
         super().__init__(**data)
 

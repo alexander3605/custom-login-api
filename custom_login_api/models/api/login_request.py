@@ -3,8 +3,6 @@ from __future__ import annotations
 from typing import Any
 
 from pydantic import BaseModel
-from pydantic.error_wrappers import ValidationError
-from pydantic.errors import EmailError
 from pydantic.networks import validate_email
 
 
@@ -20,10 +18,7 @@ class LoginRequest(BaseModel):
 
     def __init__(self, **data: Any) -> None:
         """Constructor which performs a validation check on the email address provided."""
-        try:
-            validate_email(data.get("email", ""))
-        except EmailError as e:
-            raise ValidationError(errors=[], model=LoginRequest) from e
+        validate_email(data.get("email", ""))
         super().__init__(**data)
 
     @classmethod
