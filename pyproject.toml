@@ -10,7 +10,7 @@ packages = [{include = "custom_login_api"}]
 python = "^3.10"
 
 environ-config = "^24.1.0"
-fastapi = "^0.115.2"
+fastapi = "^0.115.4"
 pydantic = {version = "^2.9.2", extras = ["email"]}
 pyjwt = "^2.7.0"
 uvicorn = {version = "^0.32.0", extras = ["standard"]}
