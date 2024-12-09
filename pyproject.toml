@@ -13,7 +13,7 @@ environ-config = "^24.1.0"
 fastapi = "^0.115.5"
 pydantic = {version = "^2.10.1", extras = ["email"]}
 pyjwt = "^2.10.0"
-uvicorn = {version = "^0.32.0", extras = ["standard"]}
+uvicorn = {version = "^0.32.1", extras = ["standard"]}
 
 
 [tool.poetry.group.dev.dependencies]
